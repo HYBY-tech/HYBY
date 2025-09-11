@@ -1,0 +1,88 @@
+:root {
+    --primary-color: #001EFF; /* 主色：导航栏、品牌Logo */
+    --secondary-color: #0F62FE; /* 辅助色：按钮、高亮标签 */
+    --background-color: #F4F4F4; /* 背景色：页面底色、卡片背景 */
+    --text-color: #161616; /* 文字色：正文、标题 */
+    --accent-color: #8A3FFC; /* 强调色：悬浮效果、图标 */
+}
+
+body {
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.navbar {
+    background-color: var(--primary-color) !important;
+}
+
+.navbar-brand, .nav-link {
+    color: white !important;
+}
+
+.nav-link:hover {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.hero-section {
+    background: linear-gradient(rgba(0, 30, 255, 0.8), rgba(0, 30, 255, 0.8)), url('../images/hero/office-bg.jpg');
+    background-size: cover;
+    color: white;
+    padding: 120px 0;
+}
+
+.product-card {
+    border: none;
+    transition: 0.3s;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid var(--accent-color);
+}
+
+.partner-logo {
+    height: 60px;
+    margin: 15px;
+    filter: grayscale(100%);
+    transition: 0.3s;
+    opacity: 0.7;
+}
+
+.partner-logo:hover {
+    filter: none;
+    opacity: 1;
+}
+
+footer {
+    background-color: var(--primary-color) !important;
+}
+
+.section-title {
+    color: var(--primary-color);
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+} 
