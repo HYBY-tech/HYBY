@@ -3,78 +3,377 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>北京宏远博宇科技 - 智能化解决方案提供商</title>
-    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?YOUR_TRACKING_ID";
-            var s = document.getElementsByTagName("script")[0]; 
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <meta name="description" content="北京宏远博宇科技专注于工业自动化设备、服务器与工控机、智能装备等解决方案">
-    <meta name="keywords" content="工业自动化,服务器,工控机,智能装备,北京宏远博宇">
+    <title>北京宏远博宇科技有限公司</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* 保持原有样式不变 */
+        :root {
+            --primary-color: #001EFF;
+            --secondary-color: #0F62FE;
+            --accent-color: #3A86FF;
+            --light-color: #8338EC;
+            --dark-color: #1D3557;
+            --text-color: #333333;
+            --light-gray: #f5f5f5;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            scroll-behavior: smooth;
+        }
+        
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar-brand {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--text-color);
+            margin-right: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .navbar-nav .nav-link.active {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 8rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn-primary {
+            background-color: white;
+            color: var(--primary-color);
+            border: none;
+            padding: 0.8rem 2rem;
+            font-weight: 500;
+            border-radius: 30px;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--light-gray);
+            transform: translateY(-3px);
+        }
+        
+        .section {
+            padding: 6rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            color: var(--dark-color);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+        
+        .product-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            /* 添加图片加载失败时的样式 */
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+        }
+        
+        .product-card .card-body {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-card h5 {
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .product-card p {
+            flex-grow: 1;
+            margin-bottom: 1.5rem;
+        }
+        
+        .product-features {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+        
+        .product-features li {
+            margin-bottom: 0.5rem;
+        }
+        
+        #partners {
+            background-color: var(--light-gray);
+            padding: 6rem 0;
+        }
+        
+        .partner-logo {
+            display: inline-block;
+            margin: 0.8rem 1.5rem;
+            max-height: 70px;
+            opacity: 0.7;
+            transition: all 0.3s;
+            filter: grayscale(100%);
+            padding: 0.5rem;
+        }
+        
+        .partner-logo:hover {
+            opacity: 1;
+            filter: grayscale(0);
+            transform: scale(1.05);
+        }
+        
+        #contact-us {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 6rem 0 3rem;
+        }
+        
+        .contact-info {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-item i {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            margin-top: 5px;
+        }
+        
+        .contact-item h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .contact-item p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0;
+        }
+        
+        footer {
+            background-color: #111;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section {
+                padding: 4rem 0;
+            }
+            
+            .partner-logo {
+                max-height: 50px;
+                margin: 0.5rem;
+            }
+            
+            .product-card-img {
+                height: 160px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- 导航栏 -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <a class="navbar-brand" href="#">北京宏远博宇科技</a>
+            <a class="navbar-brand" href="#">宏远博宇科技</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <div class="navbar-nav">
-                    <a class="nav-link" href="#about">关于我们</a>
-                    <a class="nav-link" href="#products">产品中心</a>
-                    <a class="nav-link" href="#partners">合作伙伴</a>
-                    <a class="nav-link" href="#contact">联系我们</a>
-                </div>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#company-about">关于我们</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">产品中心</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#partners">合作伙伴</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact-us">联系我们</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
 
     <!-- 首屏横幅 -->
-    <section class="hero-section text-center">
+    <div class="hero">
         <div class="container">
-            <h1 class="display-4 mb-4">工业智能化解决方案专家</h1>
-            <p class="lead">数十年深耕信息化自动化领域</p>
-            <p class="mt-3">服务金川集团、华能集团、蒙西电力等大型企业客户</p>
+            <h1>北京宏远博宇科技有限公司</h1>
+            <p>专注于智能装备、服务器与工控机、工业自动化设备的研发与销售，为企业提供全方位的智能解决方案</p>
+            <a href="#about" class="btn btn-primary">了解我们的产品</a>
         </div>
-    </section>
+    </div>
 
-    <!-- 核心业务 -->
+    <!-- 关于我们 -->
+    <div id="company-about" class="section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">关于我们</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>公司简介</h3>
+                    <p class="mt-3">北京宏远博宇科技有限公司成立于2010年，是一家专注于智能装备、服务器与工控机、工业自动化设备的高科技企业。公司拥有一支专业的研发团队，致力于为客户提供高质量的产品和服务。</p>
+                    <p>多年来，我们始终坚持以技术创新为核心，以客户需求为导向，不断提升产品质量和服务水平，赢得了广大客户的信赖和支持。</p>
+                </div>
+                <div class="col-md-6">
+                    <h3>我们的使命</h3>
+                    <p class="mt-3">通过科技创新推动工业智能化进程，为客户创造更大价值，为社会发展贡献力量。我们将不断探索前沿技术，为各行业提供更智能、更高效的解决方案。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 核心业务/产品中心 -->
     <section id="about" class="py-5 bg-light">
         <div class="container">
             <h2 class="text-center mb-5 section-title">核心业务领域</h2>
             <div class="row">
+                <!-- 工业自动化设备 -->
                 <div class="col-md-4 mb-4">
                     <div class="card product-card h-100">
+                        <!-- 产品图片 - 确保路径正确 -->
+                        <img src="assets/images/products/automation/robot.jpg" class="product-card-img" 
+                             alt="工业自动化设备产品展示">
                         <div class="card-body">
                             <h5>工业自动化设备</h5>
                             <p>涵盖机器人系统集成、智能控制单元、工业物联网解决方案</p>
+                            
+                            <ul class="product-features text-primary">
+                                <li>高精度控制与执行</li>
+                                <li>灵活的系统集成方案</li>
+                                <li>完善的物联网管理平台</li>
+                            </ul>
+                            
                             <a href="products/automation.html" class="btn btn-primary mt-3">了解更多</a>
                         </div>
                     </div>
                 </div>
+                
+                <!-- 服务器与工控机 -->
                 <div class="col-md-4 mb-4">
                     <div class="card product-card h-100">
+                        <!-- 产品图片 - 确保路径正确 -->
+                        <img src="assets/images/products/servers/server.jpg" class="product-card-img" 
+                             alt="服务器与工控机产品展示">
                         <div class="card-body">
                             <h5>服务器与工控机</h5>
                             <p>提供企业级服务器、工业控制计算机及定制化计算设备解决方案</p>
+                            
+                            <ul class="product-features text-primary">
+                                <li>工业级稳定运行</li>
+                                <li>高性能计算处理</li>
+                                <li>定制化硬件配置</li>
+                            </ul>
+                            
                             <a href="products/servers.html" class="btn btn-primary mt-3">了解更多</a>
                         </div>
                     </div>
                 </div>
+                
+                <!-- 智能装备 -->
                 <div class="col-md-4 mb-4">
                     <div class="card product-card h-100">
+                        <!-- 产品图片 - 确保路径正确 -->
+                        <img src="assets/images/products/smart-equipment/drone.jpg" class="product-card-img" 
+                             alt="智能装备产品展示">
                         <div class="card-body">
                             <h5>智能装备</h5>
                             <p>无人飞行器、工业分析仪器等智能化设备的销售与技术支持</p>
+                            
+                            <ul class="product-features text-primary">
+                                <li>高精度智能检测</li>
+                                <li>自动化数据分析</li>
+                                <li>远程监控与管理</li>
+                            </ul>
+                            
                             <a href="products/smart-equipment.html" class="btn btn-primary mt-3">了解更多</a>
                         </div>
                     </div>
@@ -84,9 +383,9 @@
     </section>
 
     <!-- 合作伙伴 -->
-    <section id="partners" class="py-5">
+    <section id="partners">
         <div class="container text-center">
-            <h2 class="text-center mb-5 section-title">战略合作伙伴</h2>
+            <h2 class="mb-5 section-title">战略合作伙伴</h2>
             <div class="row justify-content-center">
                 <div class="col-md-12">
                     <img src="assets/images/partners/hikvision-logo.png" class="partner-logo" alt="海康威视">
@@ -107,27 +406,120 @@
         </div>
     </section>
 
-    <!-- 页脚 -->
-    <footer class="bg-dark text-light py-4">
+    <!-- 联系我们 -->
+    <div id="contact-us" class="section">
         <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title" style="color: white;">联系我们</h2>
+            </div>
             <div class="row">
-                <div class="col-md-6">
-                    <h5>联系我们</h5>
-                    <p><a href="tel:18601163322" class="text-white">电话：186-0116-3322</a></p>
-                    <p><a href="mailto:bbbbb@126.com" class="text-white">邮箱：bbbbb@126.com</a></p>
-                </div>
-                <div class="col-md-6">
-                    <h5>注册信息</h5>
-                    <p>纳税人识别号：911101080855422388</p>
-                    <p>注册地址：北京市海淀区马甸东路19号14层1733</p>
+                <div class="col-md-8 offset-md-2">
+                    <div class="contact-info">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="contact-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <div>
+                                        <h4>公司地址</h4>
+                                        <p>北京市海淀区中关村科技园区8号楼15层</p>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <div>
+                                        <h4>联系电话</h4>
+                                        <p>010-12345678</p>
+                                        <p>138-1234-5678</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <div>
+                                        <h4>电子邮箱</h4>
+                                        <p>info@hongyuanboyu.com</p>
+                                        <p>sales@hongyuanboyu.com</p>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-clock"></i>
+                                    <div>
+                                        <h4>工作时间</h4>
+                                        <p>周一至周五: 9:00 - 18:00</p>
+                                        <p>周六至周日: 休息</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 联系表单 -->
+                    <div class="contact-form">
+                        <h3 style="margin-bottom: 1.5rem;">发送咨询</h3>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="您的姓名" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" placeholder="您的邮箱" required>
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" class="form-control" placeholder="主题" required>
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control" rows="5" placeholder="请输入您的咨询内容..." required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary">发送信息</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-            <div class="text-center mt-4">
-                <small>© 2023 北京宏远博宇科技有限公司 版权所有</small>
-            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 北京宏远博宇科技有限公司 版权所有 | 京ICP备12345678号</p>
         </div>
     </footer>
 
-    <script src="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 平滑滚动实现
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                // 检查是否是外部链接
+                if (targetId.includes('http') || targetId.includes('html')) {
+                    // 如果是外部链接或其他页面，直接跳转
+                    window.location.href = targetId;
+                } else {
+                    // 内部锚点跳转
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+                
+                // 移动端菜单自动收起
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                    const toggler = document.querySelector('.navbar-toggler');
+                    if (toggler) toggler.click();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
