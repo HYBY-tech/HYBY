@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>案例分享 | 工业数据平台驾驶舱与 IoT 接入平台</title>
+  <meta name="description" content="工业数据平台驾驶舱与 IoT 接入平台，对外展示案例页" />
+  <link rel="stylesheet" href="../02/assets/style.css" />
+  <style>
+    .hero-visual.dashboard-visual {
+      background:
+        radial-gradient(circle at 20% 20%, rgba(76, 201, 240, 0.32), transparent 22%),
+        radial-gradient(circle at 78% 30%, rgba(15, 98, 254, 0.28), transparent 24%),
+        linear-gradient(135deg, #0b1f4d 0%, #123b9b 48%, #0f62fe 100%);
+      display: grid;
+      place-items: center;
+      padding: 28px;
+    }
+
+    .dashboard-panel {
+      width: 100%;
+      max-width: 430px;
+      border-radius: 26px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+      padding: 22px;
+      color: #fff;
+      backdrop-filter: blur(8px);
+    }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.9fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .dashboard-block {
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 14px;
+      min-height: 92px;
+    }
+
+    .dashboard-kpi {
+      font-size: 1.55rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .dashboard-line {
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      margin-top: 10px;
+      overflow: hidden;
+    }
+
+    .dashboard-line::after {
+      content: "";
+      display: block;
+      height: 100%;
+      width: 68%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #4cc9f0, #ffffff);
+    }
+
+    .dashboard-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .dashboard-tags span {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="page-shell topbar-inner">
+      <div class="brand">
+        <div class="brand-mark">HY</div>
+        <div>
+          <h1>宏远博宇科技</h1>
+          <p>案例分享 / 工业数据平台</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <a class="btn btn-secondary" href="../../index.html#case-sharing">返回案例分享</a>
+        <a class="btn btn-primary" href="../../index.html#contact-us">咨询类似项目</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">工业互联网 · 数据驾驶舱 · 统一接入</span>
+          <h2>工业数据平台驾驶舱与 IoT 接入平台</h2>
+          <p>
+            面向大型工业企业生产公共服务场景，建设一套覆盖设备接入、数据采集、规则处理、
+            时序存储、告警联动和可视化驾驶舱的综合数据平台，支撑生产运行监测、设备统一管控和数据对外服务。
+          </p>
+          <p class="small">
+            案例内容已按对外展示口径完成脱敏处理，重点呈现平台能力、实施范围、交付价值与扩展方向。
+          </p>
+          <div class="hero-note">
+            对外展示版保留：平台目标、技术路线、能力模块、交付价值与服务边界；
+            省略：合同主体、具体服务器数量、账号口令策略、端口细节、验收条款与报价信息。
+          </div>
+        </div>
+
+        <div class="hero-visual dashboard-visual">
+          <div class="dashboard-panel">
+            <strong>平台能力概览</strong>
+            <div class="dashboard-grid">
+              <div class="dashboard-block">
+                <div class="dashboard-kpi">多协议接入</div>
+                <div>支持工业现场设备与系统统一汇聚</div>
+                <div class="dashboard-line"></div>
+              </div>
+              <div class="dashboard-block">
+                <div class="dashboard-kpi">规则联动</div>
+                <div>实时处理、告警触发与数据转发</div>
+              </div>
+              <div class="dashboard-block">
+                <div class="dashboard-kpi">时序存储</div>
+                <div>热冷分层，支撑历史追溯与分析</div>
+              </div>
+              <div class="dashboard-block">
+                <div class="dashboard-kpi">可视化</div>
+                <div>驾驶舱、大屏、组态与 3D 展示</div>
+              </div>
+            </div>
+            <div class="dashboard-tags">
+              <span>设备管理</span>
+              <span>服务调度</span>
+              <span>视频接入</span>
+              <span>IoT Hub</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="metrics" aria-label="项目指标">
+        <div class="card">
+          <div class="metric-value">四层架构</div>
+          <div class="metric-label">设备层、采集层、管理层、展示层分层建设</div>
+        </div>
+        <div class="card">
+          <div class="metric-value">多协议接入</div>
+          <div class="metric-label">兼容工业现场常见协议与异构设备</div>
+        </div>
+        <div class="card">
+          <div class="metric-value">规则引擎</div>
+          <div class="metric-label">支持清洗、告警、转发与场景联动</div>
+        </div>
+        <div class="card">
+          <div class="metric-value">驾驶舱展示</div>
+          <div class="metric-label">大屏、组态、3D 与历史数据回溯协同</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="overview">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">项目概述</h3>
+          <p class="section-subtitle">围绕“统一接入、统一治理、统一展示、统一服务”建设工业数据中台能力。</p>
+        </div>
+      </div>
+      <div class="content-grid">
+        <div class="content-card">
+          <h3>建设背景</h3>
+          <p>企业生产现场设备种类多、协议异构、数据分散，需要建立统一的数据底座和驾驶舱能力，以支撑运行监测、集中展示和业务协同。</p>
+        </div>
+        <div class="content-card">
+          <h3>建设目标</h3>
+          <p>实现设备接入、数据采集、时序存储、告警管理、规则处理、可视化大屏和对外数据服务的一体化建设。</p>
+        </div>
+        <div class="content-card">
+          <h3>交付定位</h3>
+          <p>面向工业企业公共服务平台场景的驾驶舱组件化交付，可作为后续业务系统扩展和多场景复制的技术底座。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="architecture">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">方案架构</h3>
+          <p class="section-subtitle">从现场设备到驾驶舱展示形成完整链路，兼顾实时性、扩展性与可维护性。</p>
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="content-card">
+          <h3>业务架构</h3>
+          <ul>
+            <li>设备层：传感器、PLC、摄像头及其他现场设备。</li>
+            <li>采集层：支持 OPC、MQTT、TCP、Modbus 等协议的数据采集与接入。</li>
+            <li>管理层：负责缓存、关系数据、时序数据、消息处理和规则联动。</li>
+            <li>展示层：提供驾驶舱、大屏、组态页面、3D 画面和视频监看能力。</li>
+          </ul>
+        </div>
+        <div class="content-card">
+          <h3>技术路线</h3>
+          <ul>
+            <li>前后端分层架构，支撑网页端及多终端展示。</li>
+            <li>关系型数据库、缓存、时序数据库协同存储。</li>
+            <li>消息队列解耦接入与处理链路，提升吞吐与稳定性。</li>
+            <li>规则引擎与设备模型结合，提升处理自动化与复用能力。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="capabilities">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">核心能力</h3>
+          <p class="section-subtitle">不仅是一个“看板”，而是覆盖工业 IoT 接入、治理和展示的完整平台。</p>
+        </div>
+      </div>
+      <div class="content-grid">
+        <div class="content-card">
+          <h3>设备与产品管理</h3>
+          <p>支持产品分类、物模型、设备认证、设备分组、位置配置、设备指令下发和在线状态监控，实现设备统一纳管。</p>
+        </div>
+        <div class="content-card">
+          <h3>设备采集与接入</h3>
+          <p>兼容多种工业通信协议，可并发采集多设备数据，并为后续处理、存储和可视化提供统一标准化输入。</p>
+        </div>
+        <div class="content-card">
+          <h3>规则引擎与告警</h3>
+          <p>通过可视化规则链完成数据清洗、阈值判断、消息通知、数据转发和场景联动，提升自动化处理效率。</p>
+        </div>
+        <div class="content-card">
+          <h3>可视化驾驶舱</h3>
+          <p>提供首页统计分析、组态画面、工业大屏、3D 项目和多数据源展示能力，支持生产运行状态实时感知。</p>
+        </div>
+        <div class="content-card">
+          <h3>视频与现场感知</h3>
+          <p>支持摄像头统一接入、在线查看、历史回放与多品牌兼容，满足生产监控与安防联动场景需求。</p>
+        </div>
+        <div class="content-card">
+          <h3>IoT Hub 与数据服务</h3>
+          <p>通过统一接收端与处理端管理设备消息，实现连接管理、数据推送、异步处理和向上层系统的数据服务输出。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="delivery">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">实施与服务</h3>
+          <p class="section-subtitle">以平台化交付方式推进上线，并配套调试、培训和运维支持。</p>
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="content-card">
+          <h3>实施特点</h3>
+          <ul>
+            <li>围绕系统集成、开发、测试、试运行、验收与培训进行阶段化推进。</li>
+            <li>部署在企业内部环境，适配工业场景下的数据安全与网络边界要求。</li>
+            <li>兼顾实时运行与历史归档，支持热冷数据分层管理。</li>
+          </ul>
+        </div>
+        <div class="content-card">
+          <h3>交付服务</h3>
+          <ul>
+            <li>提供现场调试、问题修复、技术咨询与远程运维支持。</li>
+            <li>提供系统使用培训，帮助业务与运维人员快速上手。</li>
+            <li>交付相关技术文件，便于后续扩展、运维和项目复制。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="value">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">项目价值</h3>
+          <p class="section-subtitle">通过统一平台降低集成复杂度，让工业数据真正可接、可管、可看、可用。</p>
+        </div>
+      </div>
+      <div class="value-list">
+        <div class="value-item">
+          <strong>打通现场设备与上层应用</strong>
+          通过统一接入和标准化处理，减少多系统、多协议并行建设带来的割裂与重复投入。
+        </div>
+        <div class="value-item">
+          <strong>提升生产运行透明度</strong>
+          将设备状态、历史趋势、告警事件和现场视频纳入统一驾驶舱，实现集中监测与快速定位。
+        </div>
+        <div class="value-item">
+          <strong>增强平台扩展能力</strong>
+          依托规则引擎、组态和数据服务能力，为后续增加设备类型、业务专题和上层分析应用预留空间。
+        </div>
+      </div>
+    </section>
+
+    <section class="footer-box" id="contact">
+      <h3>需要类似的数据驾驶舱或工业 IoT 平台方案？</h3>
+      <p>我们可以根据你的现场设备类型、已有系统和展示需求，提供脱敏案例讲解、平台建设思路和落地实施建议。</p>
+      <div class="top-actions" style="margin-top: 18px;">
+        <a class="btn btn-secondary" href="../../index.html#case-sharing">返回案例列表</a>
+        <a class="btn btn-primary" href="../../index.html#contact-us">前往咨询</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

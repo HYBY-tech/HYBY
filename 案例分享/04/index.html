@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>案例分享 | 深部开采工程视频监测监控系统</title>
+  <meta name="description" content="深部开采工程视频监测监控系统，对外展示案例页" />
+  <link rel="stylesheet" href="../02/assets/style.css" />
+  <style>
+    :root {
+      --primary: #e4572e;
+      --primary-dark: #7a2715;
+      --accent: #13c2c2;
+      --text: #172033;
+      --muted: #5b667a;
+      --line: rgba(228, 87, 46, 0.14);
+      --shadow: 0 22px 44px rgba(122, 39, 21, 0.12);
+    }
+
+    body {
+      background:
+        radial-gradient(circle at left top, rgba(19, 194, 194, 0.16), transparent 32%),
+        radial-gradient(circle at right 18%, rgba(228, 87, 46, 0.16), transparent 30%),
+        linear-gradient(#fffaf5 0%, #eef7f7 100%);
+    }
+
+    .brand-mark,
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #ff8a3d);
+    }
+
+    .hero-visual.mine-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg, rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.08) 52%, rgba(228, 87, 46, 0.32)),
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 64px);
+      pointer-events: none;
+    }
+
+    .hero-visual.mine-visual img {
+      filter: saturate(0.95) contrast(1.05);
+    }
+
+    .system-map {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .system-node {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .system-node::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(var(--primary), var(--accent));
+    }
+
+    .system-node h3,
+    .system-node p,
+    .system-node ul {
+      margin-left: 8px;
+    }
+
+    .signal-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .signal-strip span {
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: var(--primary-dark);
+      background: rgba(228, 87, 46, 0.08);
+      border: 1px solid rgba(228, 87, 46, 0.12);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 980px) {
+      .system-map { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="page-shell topbar-inner">
+      <div class="brand">
+        <div class="brand-mark">HY</div>
+        <div>
+          <h1>宏远博宇科技</h1>
+          <p>案例分享 / 矿山视频监测</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <a class="btn btn-secondary" href="../../index.html#case-sharing">返回案例分享</a>
+        <a class="btn btn-primary" href="../../index.html#contact-us">咨询类似项目</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">深部开采 · 六大系统 · 安全监测</span>
+          <h2>深部开采工程视频监测监控系统</h2>
+          <p>
+            面向地下矿山深部开采和重点避险区域，建设“环境参数监测 + 视频实时监控 + 语音广播联动 + 平台标准对接”的安全生产支撑系统，
+            将关键区域的风险状态转化为可视、可告警、可追溯的数据资产。
+          </p>
+          <p class="small">
+            案例内容已按对外展示口径脱敏，重点呈现矿山重点区域监测、传输组网、联动告警与平台对接能力。
+          </p>
+          <div class="hero-note">
+            对外展示版保留：建设场景、三层架构、监测对象、接口能力、应用价值与扩展方向；
+            省略：客户名称、具体地点、人员信息、详尽供货清单、型号数量与合同信息。
+          </div>
+          <div class="signal-strip">
+            <span>视频监控</span>
+            <span>环境监测</span>
+            <span>光纤传输</span>
+            <span>声光告警</span>
+            <span>平台对接</span>
+          </div>
+        </div>
+
+        <div class="hero-visual mine-visual">
+          <img src="assets/images/hero.jpeg" alt="深部开采工程视频监测监控系统示意图" />
+          <div class="hero-overlay">
+            <strong>核心目标</strong>
+            <div class="small" style="color: rgba(255,255,255,.86)">
+              对避险硐室、巷道与关键点位进行连续监测，为调度指挥和应急处置提供现场依据。
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="metrics" aria-label="项目指标">
+        <div class="card">
+          <div class="metric-value">三层架构</div>
+          <div class="metric-label">中心站、网络传输层、现场设备层协同建设</div>
+        </div>
+        <div class="card">
+          <div class="metric-value">视频 + 传感</div>
+          <div class="metric-label">图像、气体、烟雾、风量等多源数据接入</div>
+        </div>
+        <div class="card">
+          <div class="metric-value">光纤主干</div>
+          <div class="metric-label">面向井下复杂工况的稳定低延迟传输</div>
+        </div>
+        <div class="card">
+          <div class="metric-value">标准接口</div>
+          <div class="metric-label">支撑与既有六大系统及融合平台对接</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="overview">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">项目概述</h3>
+          <p class="section-subtitle">以安全生产为牵引，补齐深部开采关键区域的可视化监测与数据接入能力。</p>
+        </div>
+      </div>
+      <div class="content-grid">
+        <div class="content-card">
+          <h3>建设背景</h3>
+          <p>地下矿山深部开采环境复杂，避险硐室及周边巷道需要持续掌握环境参数、视频状态和告警事件，为安全管理提供客观依据。</p>
+        </div>
+        <div class="content-card">
+          <h3>系统定位</h3>
+          <p>系统既是面向现场安全的监测监控平台，也是向上级融合平台提供标准化数据入口的基础能力。</p>
+        </div>
+        <div class="content-card">
+          <h3>建设目标</h3>
+          <p>实现重点区域可视、异常可警、事件可查、数据可接，为调度指挥、应急联动和后续智能化升级奠定基础。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="scope">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">建设范围</h3>
+          <p class="section-subtitle">采用中心站、网络传输、现场设备三层架构，覆盖从井下采集到地面调度的完整链路。</p>
+        </div>
+      </div>
+      <div class="system-map">
+        <div class="content-card system-node">
+          <h3>中心站</h3>
+          <ul>
+            <li>监测监控与视频操作终端</li>
+            <li>数据接收、存储、统计分析与报警</li>
+            <li>视频预览、回放、抓拍和云台控制</li>
+            <li>与既有平台进行数据对接</li>
+          </ul>
+        </div>
+        <div class="content-card system-node">
+          <h3>网络传输层</h3>
+          <ul>
+            <li>以光纤作为主干传输介质</li>
+            <li>通过工业交换机和光纤收发设备组网</li>
+            <li>保障视频和监测数据稳定回传</li>
+            <li>适配井下长距离、复杂环境传输</li>
+          </ul>
+        </div>
+        <div class="content-card system-node">
+          <h3>现场设备层</h3>
+          <ul>
+            <li>监控分站汇聚现场监测数据</li>
+            <li>风量、一氧化碳、烟雾等环境传感器</li>
+            <li>网络摄像机与前端防护设备</li>
+            <li>语音、广播和配套供电设施</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="tech">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">关键技术</h3>
+          <p class="section-subtitle">围绕矿山复杂工况，强调可靠传输、标准接口和便捷运维。</p>
+        </div>
+      </div>
+      <div class="content-grid">
+        <div class="content-card">
+          <h3>标准与合规</h3>
+          <p>系统设计参考矿山通信、监测、控制等相关规范，现场设备按工业环境防护要求选型，满足长期稳定运行需求。</p>
+        </div>
+        <div class="content-card">
+          <h3>开放接口</h3>
+          <p>通过 OPC、FTP、ODBC 等标准化接口或数据通道，为六大系统及后续融合平台提供可集成的数据入口。</p>
+        </div>
+        <div class="content-card">
+          <h3>告警与运维</h3>
+          <p>支持异常参数提示、声光或弹窗告警、日志留痕、录像回放和远程查看，便于值守人员快速判断现场状态。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="scenarios">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">典型应用场景</h3>
+          <p class="section-subtitle">从现场感知、调度指挥到事件追溯，形成安全管理闭环。</p>
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="content-card">
+          <h3>重点区域安全监测</h3>
+          <ul>
+            <li>避险硐室内外环境参数监测</li>
+            <li>巷道关键点位视频巡检</li>
+            <li>烟雾、气体、风量等异常状态提示</li>
+          </ul>
+        </div>
+        <div class="content-card">
+          <h3>远程指挥与应急联动</h3>
+          <ul>
+            <li>值班端集中查看视频和监测数据</li>
+            <li>通过广播或语音终端进行现场通知</li>
+            <li>结合录像和日志完成事件复盘</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="value">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">项目价值</h3>
+          <p class="section-subtitle">把“看不见的风险”转化为可判断、可处置、可追溯的管理信号。</p>
+        </div>
+      </div>
+      <div class="value-list">
+        <div class="value-item">
+          <strong>提升安全生产可视化能力</strong>
+          将井下重点区域的视频画面、环境参数和告警事件集中呈现，帮助管理人员及时掌握现场状态。
+        </div>
+        <div class="value-item">
+          <strong>缩短异常处置时间</strong>
+          通过视频与传感器数据互相印证，提升异常研判效率，为调度指挥和应急处置争取时间。
+        </div>
+        <div class="value-item">
+          <strong>沉淀数字化矿山基础数据</strong>
+          通过标准接口和统一数据入口，为后续多系统融合、AI 视频分析、工单运维和大屏联动预留扩展空间。
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="expand">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">扩展方向</h3>
+          <p class="section-subtitle">在监测监控底座之上，可继续演进为更智能的矿山安全应用。</p>
+        </div>
+      </div>
+      <div class="content-grid">
+        <div class="content-card">
+          <h3>AI 视频分析</h3>
+          <p>增加人员闯入、烟火识别、设备异常、拥堵滞留等智能算法，提升主动发现风险的能力。</p>
+        </div>
+        <div class="content-card">
+          <h3>多源融合告警</h3>
+          <p>将视频、环境传感器、人员定位、通风等数据综合判断，降低误报漏报，提升告警可信度。</p>
+        </div>
+        <div class="content-card">
+          <h3>大屏与移动端协同</h3>
+          <p>通过调度大屏、移动巡检和工单联动，让发现、派发、处置、复盘形成闭环。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer-box" id="contact">
+      <h3>需要类似的矿山视频监测或六大系统对接方案？</h3>
+      <p>我们可以结合现场点位、传输条件、既有平台接口和安全管理目标，提供脱敏案例讲解与实施建议。</p>
+      <div class="top-actions" style="margin-top: 18px;">
+        <a class="btn btn-secondary" href="../../index.html#case-sharing">返回案例列表</a>
+        <a class="btn btn-primary" href="../../index.html#contact-us">前往咨询</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

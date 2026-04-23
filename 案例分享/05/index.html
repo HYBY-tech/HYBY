@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>案例分享 | 无人机智能巡检与应急处置系统</title>
+  <meta name="description" content="无人机智能巡检与应急处置系统，对外展示案例页" />
+  <link rel="stylesheet" href="../02/assets/style.css" />
+  <style>
+    :root {
+      --primary: #e4572e;
+      --primary-dark: #7a2715;
+      --accent: #13c2c2;
+      --text: #172033;
+      --muted: #5b667a;
+      --line: rgba(228, 87, 46, 0.14);
+      --shadow: 0 22px 44px rgba(122, 39, 21, 0.12);
+    }
+
+    body {
+      background:
+        radial-gradient(circle at left top, rgba(19, 194, 194, 0.16), transparent 32%),
+        radial-gradient(circle at right 18%, rgba(228, 87, 46, 0.16), transparent 30%),
+        linear-gradient(#fffaf5 0%, #eef7f7 100%);
+    }
+
+    .brand-mark,
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #ff8a3d);
+    }
+
+    .hero-visual.drone-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg, rgba(15, 23, 42, 0.68), rgba(15, 23, 42, 0.12) 52%, rgba(19, 194, 194, 0.28)),
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 64px);
+      pointer-events: none;
+    }
+
+    .hero-visual.drone-visual img {
+      filter: saturate(1.04) contrast(1.05);
+    }
+
+    .system-map {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .system-node {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .system-node::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(var(--primary), var(--accent));
+    }
+
+    .system-node h3,
+    .system-node p,
+    .system-node ul {
+      margin-left: 8px;
+    }
+
+    .signal-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .signal-strip span {
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: var(--primary-dark);
+      background: rgba(228, 87, 46, 0.08);
+      border: 1px solid rgba(228, 87, 46, 0.12);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 980px) {
+      .system-map { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="page-shell topbar-inner">
+      <div class="brand">
+        <div class="brand-mark">HY</div>
+        <div>
+          <h1>宏远博宇科技</h1>
+          <p>案例分享 / 无人机巡检应急</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <a class="btn btn-secondary" href="../../index.html#case-sharing">返回案例分享</a>
+        <a class="btn btn-primary" href="../../index.html#contact-us">咨询类似项目</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">无人机巡检 · 应急处置 · 多负载作业</span>
+          <h2>无人机智能巡检与应急处置系统</h2>
+          <p>
+            面向园区、矿山、厂区和应急管理场景，建设具备高精度定位、长航时飞行、实时高清图传、
+            夜间照明、远程喊话和物资抛投能力的无人机作业系统，提升巡检效率和现场处置能力。
+          </p>
+          <p class="small">
+            案例内容已按对外展示口径整理，重点呈现飞行平台、通信图传、多传感感知、任务负载和电池保障能力。
+          </p>
+          <div class="hero-note">
+            对外展示版保留：建设目标、关键能力、典型任务、保障体系与扩展方向；
+            省略：具体采购清单、报价信息、供应商商务条款和非公开项目细节。
+          </div>
+          <div class="signal-strip">
+            <span>RTK 定位</span>
+            <span>高清图传</span>
+            <span>智能避障</span>
+            <span>探照喊话</span>
+            <span>抛投救援</span>
+          </div>
+        </div>
+
+        <div class="hero-visual drone-visual">
+          <img src="assets/images/hero.jpg" alt="无人机智能巡检与应急处置系统示意图" />
+          <div class="hero-overlay">
+            <strong>核心目标</strong>
+            <div class="small" style="color: rgba(255,255,255,.86)">
+              将高空视角、实时通信和多任务负载结合起来，支撑巡检、夜间搜索、现场广播和应急投送。
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="metrics" aria-label="项目指标">
+        <div class="card">
+          <div class="metric-value">55 分钟级</div>
+          <div class="metric-label">长航时作业能力，满足大范围巡检需求</div>
+        </div>
+        <div class="card">
+          <div class="metric-value">RTK 精度</div>
+          <div class="metric-label">厘米级悬停与定位，支撑精细化航线任务</div>
+        </div>
+        <div class="card">
+          <div class="metric-value">20km 级</div>
+          <div class="metric-label">远距离控制与图传能力，覆盖复杂作业场景</div>
+        </div>
+        <div class="card">
+          <div class="metric-value">多负载</div>
+          <div class="metric-label">照明、喊话、热成像、抛投等任务能力可组合</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="overview">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">项目概述</h3>
+          <p class="section-subtitle">以空中机动平台补充地面巡检盲区，形成“快速到达、实时回传、现场处置”的能力闭环。</p>
+        </div>
+      </div>
+      <div class="content-grid">
+        <div class="content-card">
+          <h3>建设背景</h3>
+          <p>传统人工巡检受地形、夜间视野、距离和安全风险限制，面对突发事件时需要更快的现场感知与处置手段。</p>
+        </div>
+        <div class="content-card">
+          <h3>系统定位</h3>
+          <p>无人机系统作为移动感知与应急处置单元，承担巡查、取证、搜索、照明、喊话和轻量物资投送等任务。</p>
+        </div>
+        <div class="content-card">
+          <h3>建设目标</h3>
+          <p>通过高可靠飞行平台、多链路通信、智能航线与多负载能力，提升巡检覆盖效率和应急响应速度。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="scope">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">建设范围</h3>
+          <p class="section-subtitle">围绕飞行平台、遥控通信和任务负载三类核心能力进行配置。</p>
+        </div>
+      </div>
+      <div class="system-map">
+        <div class="content-card system-node">
+          <h3>飞行平台</h3>
+          <ul>
+            <li>工业级机身与多旋翼飞行能力</li>
+            <li>高海拔、低温、高温和抗风作业适应性</li>
+            <li>RTK 高精度定位与多卫星系统支持</li>
+            <li>视觉、红外和雷达感知增强飞行安全</li>
+          </ul>
+        </div>
+        <div class="content-card system-node">
+          <h3>遥控与图传</h3>
+          <ul>
+            <li>带屏遥控器支撑现场一体化操作</li>
+            <li>高清实时图传与远程直播能力</li>
+            <li>双频通信和 4G 增强链路提升可靠性</li>
+            <li>双控模式支持飞行与云台协同作业</li>
+          </ul>
+        </div>
+        <div class="content-card system-node">
+          <h3>任务负载</h3>
+          <ul>
+            <li>探照灯支持远距离照明和爆闪提醒</li>
+            <li>喊话器支持实时喊话、录音和文本播报</li>
+            <li>抛投装置支持应急物资投送</li>
+            <li>多云台挂载满足复合任务需要</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="tech">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">关键技术</h3>
+          <p class="section-subtitle">围绕复杂环境下“飞得稳、看得清、传得回、处置快”组织能力。</p>
+        </div>
+      </div>
+      <div class="content-grid">
+        <div class="content-card">
+          <h3>精准定位与智能航线</h3>
+          <p>支持多卫星定位、RTK 高精度悬停、航点飞行、建图航拍、倾斜摄影和航带飞行，适合固定线路巡检和三维建模任务。</p>
+        </div>
+        <div class="content-card">
+          <h3>感知避障与夜间飞行</h3>
+          <p>通过视觉、红外、FPV 星光相机和可选毫米波雷达提升障碍物感知能力，在夜间和复杂环境中增强飞行安全。</p>
+        </div>
+        <div class="content-card">
+          <h3>数据安全与健康管理</h3>
+          <p>支持媒体加密、设备健康管理、日志记录、异常诊断和电池状态监测，便于运维人员进行安全管理和故障追溯。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="scenarios">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">典型应用场景</h3>
+          <p class="section-subtitle">覆盖日常巡检、夜间搜索、应急广播和现场支援等任务。</p>
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="content-card">
+          <h3>智能巡检与取证</h3>
+          <ul>
+            <li>厂区、矿区、管线和边界巡查</li>
+            <li>高清图传辅助远程研判</li>
+            <li>自定义水印与影像留痕支撑事件追溯</li>
+            <li>全景拍照与超清矩阵拍摄记录重点区域</li>
+          </ul>
+        </div>
+        <div class="content-card">
+          <h3>应急处置与现场支援</h3>
+          <ul>
+            <li>夜间探照与重点区域照明</li>
+            <li>远距离喊话、文本播报和循环播放</li>
+            <li>轻量救援物资或工具抛投</li>
+            <li>双控协同完成飞行与任务载荷操作</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="value">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">项目价值</h3>
+          <p class="section-subtitle">把巡检从“人到现场”升级为“空中快速抵达 + 远程实时研判”。</p>
+        </div>
+      </div>
+      <div class="value-list">
+        <div class="value-item">
+          <strong>提升巡检覆盖效率</strong>
+          无人机可快速到达人工不易抵达或存在安全风险的区域，减少巡检盲区并提升响应速度。
+        </div>
+        <div class="value-item">
+          <strong>增强夜间与突发场景处置能力</strong>
+          探照、喊话、实时图传和抛投能力可在夜间搜索、警戒提醒、应急支援中形成组合应用。
+        </div>
+        <div class="value-item">
+          <strong>沉淀可追溯的数据资产</strong>
+          通过影像、位置、时间、水印和日志数据留痕，为安全管理、事件复盘和后续智能分析提供依据。
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="expand">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">扩展方向</h3>
+          <p class="section-subtitle">结合平台化调度和 AI 分析，可进一步扩展为无人化巡检体系。</p>
+        </div>
+      </div>
+      <div class="content-grid">
+        <div class="content-card">
+          <h3>自动巡检航线</h3>
+          <p>围绕固定点位、边界线路和重点设施规划标准航线，实现周期性巡检、异常记录和巡检报告输出。</p>
+        </div>
+        <div class="content-card">
+          <h3>AI 识别分析</h3>
+          <p>接入人员、车辆、烟火、设备异常等识别能力，辅助值守人员从海量视频中快速发现风险。</p>
+        </div>
+        <div class="content-card">
+          <h3>指挥平台联动</h3>
+          <p>与视频平台、应急平台、工单系统和大屏联动，实现任务派发、过程回传、处置闭环和数据归档。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer-box" id="contact">
+      <h3>需要类似的无人机巡检或应急处置方案？</h3>
+      <p>我们可以结合巡检范围、飞行环境、任务负载、图传距离和应急流程，提供配置建议与落地方案。</p>
+      <div class="top-actions" style="margin-top: 18px;">
+        <a class="btn btn-secondary" href="../../index.html#case-sharing">返回案例列表</a>
+        <a class="btn btn-primary" href="../../index.html#contact-us">前往咨询</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

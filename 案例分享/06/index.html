@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>案例分享 | 关键设备预测性维护系统</title>
+  <meta name="description" content="关键设备预测性维护系统，对外展示案例页" />
+  <link rel="stylesheet" href="../02/assets/style.css" />
+  <style>
+    :root {
+      --primary: #e4572e;
+      --primary-dark: #7a2715;
+      --accent: #13c2c2;
+      --text: #172033;
+      --muted: #5b667a;
+      --line: rgba(228, 87, 46, 0.14);
+      --shadow: 0 22px 44px rgba(122, 39, 21, 0.12);
+    }
+
+    body {
+      background:
+        radial-gradient(circle at left top, rgba(19, 194, 194, 0.16), transparent 32%),
+        radial-gradient(circle at right 18%, rgba(228, 87, 46, 0.16), transparent 30%),
+        linear-gradient(#fffaf5 0%, #eef7f7 100%);
+    }
+
+    .brand-mark,
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #ff8a3d);
+    }
+
+    .predictive-visual {
+      background:
+        linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(17, 76, 91, 0.88)),
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 64px);
+      display: grid;
+      place-items: center;
+      padding: 28px;
+    }
+
+    .monitor-panel {
+      width: min(440px, 100%);
+      color: #fff;
+      border-radius: 26px;
+      padding: 22px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(8px);
+    }
+
+    .wave-card {
+      margin-top: 16px;
+      height: 140px;
+      border-radius: 20px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.04)),
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.06) 0 1px, transparent 1px 28px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .wave-card::before,
+    .wave-card::after {
+      content: "";
+      position: absolute;
+      left: -8%;
+      right: -8%;
+      height: 3px;
+      top: 52%;
+      background: linear-gradient(90deg, transparent, var(--accent), #fff, var(--primary), transparent);
+      transform: skewY(-7deg);
+      box-shadow: 0 0 24px rgba(19, 194, 194, 0.65);
+    }
+
+    .wave-card::after {
+      top: 68%;
+      opacity: .52;
+      transform: skewY(5deg);
+    }
+
+    .monitor-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .monitor-kpi {
+      border-radius: 16px;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .monitor-kpi strong {
+      display: block;
+      font-size: 1.18rem;
+      margin-bottom: 2px;
+    }
+
+    .system-map {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .system-node {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .system-node::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(var(--primary), var(--accent));
+    }
+
+    .system-node h3,
+    .system-node p,
+    .system-node ul {
+      margin-left: 8px;
+    }
+
+    .signal-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .signal-strip span {
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: var(--primary-dark);
+      background: rgba(228, 87, 46, 0.08);
+      border: 1px solid rgba(228, 87, 46, 0.12);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 980px) {
+      .system-map { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="page-shell topbar-inner">
+      <div class="brand">
+        <div class="brand-mark">HY</div>
+        <div>
+          <h1>宏远博宇科技</h1>
+          <p>案例分享 / 预测性维护</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <a class="btn btn-secondary" href="../../index.html#case-sharing">返回案例分享</a>
+        <a class="btn btn-primary" href="../../index.html#contact-us">咨询类似项目</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">预测性维护 · 智能传感 · 故障诊断</span>
+          <h2>关键设备预测性维护系统</h2>
+          <p>
+            面向有色冶金生产现场的泵、风机、皮带机、提升机、搅拌、空压机等关键设备，
+            建设覆盖振动、温度、转速和工艺参数的在线监测体系，实现设备状态实时感知、异常预警和智能诊断。
+          </p>
+          <p class="small">
+            案例内容已按对外展示口径整理，重点呈现智能采集、边缘计算、分级报警、故障诊断和运维闭环能力。
+          </p>
+          <div class="hero-note">
+            对外展示版保留：建设背景、系统架构、核心能力、典型设备、应用价值与扩展方向；
+            省略：客户名称、具体设备清单、测点数量、报价信息和非公开实施细节。
+          </div>
+          <div class="signal-strip">
+            <span>振动监测</span>
+            <span>温度采集</span>
+            <span>智能报警</span>
+            <span>故障诊断</span>
+            <span>检修决策</span>
+          </div>
+        </div>
+
+        <div class="hero-visual predictive-visual">
+          <div class="monitor-panel">
+            <strong>设备状态监测中枢</strong>
+            <div class="wave-card" aria-hidden="true"></div>
+            <div class="monitor-grid">
+              <div class="monitor-kpi">
+                <strong>趋势</strong>
+                <span>劣化识别</span>
+              </div>
+              <div class="monitor-kpi">
+                <strong>频谱</strong>
+                <span>故障特征</span>
+              </div>
+              <div class="monitor-kpi">
+                <strong>预警</strong>
+                <span>分级推送</span>
+              </div>
+              <div class="monitor-kpi">
+                <strong>诊断</strong>
+                <span>建议闭环</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="metrics" aria-label="项目指标">
+        <div class="card">
+          <div class="metric-value">三层架构</div>
+          <div class="metric-label">采集层、状态监测存储层、诊断应用层协同</div>
+        </div>
+        <div class="card">
+          <div class="metric-value">多类设备</div>
+          <div class="metric-label">覆盖泵、风机、皮带机、提升机、空压机等</div>
+        </div>
+        <div class="card">
+          <div class="metric-value">多源数据</div>
+          <div class="metric-label">振动、温度、转速、工艺量与历史履历融合</div>
+        </div>
+        <div class="card">
+          <div class="metric-value">智能诊断</div>
+          <div class="metric-label">轴承、润滑、不平衡、不对中、松动等模型</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="overview">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">项目概述</h3>
+          <p class="section-subtitle">从周期性检修和人工点检，升级为基于状态数据的预测性维护。</p>
+        </div>
+      </div>
+      <div class="content-grid">
+        <div class="content-card">
+          <h3>建设背景</h3>
+          <p>生产现场关键设备长期依赖人工点检和周期维修，存在状态掌握不全面、异常发现不及时、过维修与欠维修并存等问题。</p>
+        </div>
+        <div class="content-card">
+          <h3>系统定位</h3>
+          <p>系统作为设备智能管理底座，通过传感器、采集站、服务器和诊断软件形成设备状态监测与检维修决策支撑能力。</p>
+        </div>
+        <div class="content-card">
+          <h3>建设目标</h3>
+          <p>实现关键设备状态实时显示、异常智能预警、故障诊断分析、设备履历沉淀和报表统计，减少非计划停机风险。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="scope">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">系统架构</h3>
+          <p class="section-subtitle">通过智能采集、状态计算和诊断应用三层协同，形成从数据到决策的闭环。</p>
+        </div>
+      </div>
+      <div class="system-map">
+        <div class="content-card system-node">
+          <h3>数据智能采集层</h3>
+          <ul>
+            <li>振动、温度、冲击、转速等状态数据采集</li>
+            <li>无线温振传感器与有线监测站组合部署</li>
+            <li>支持网线、光纤、无线、4G/5G 等传输方式</li>
+            <li>利旧已有传感器与现场工艺数据</li>
+          </ul>
+        </div>
+        <div class="content-card system-node">
+          <h3>状态监测与存储层</h3>
+          <ul>
+            <li>提取总值、波形、频谱等故障特征指标</li>
+            <li>进行数据处理、报警判定和历史存储</li>
+            <li>支持断网缓存和边缘计算策略</li>
+            <li>沉淀设备履历、报警与处理记录</li>
+          </ul>
+        </div>
+        <div class="content-card system-node">
+          <h3>诊断应用层</h3>
+          <ul>
+            <li>WEB 端总览、产线视图和设备视图</li>
+            <li>趋势、波形、频谱、包络、瀑布图等分析工具</li>
+            <li>APP 推送报警、诊断报告和待办提醒</li>
+            <li>支持角色权限和分级消息触达</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="tech">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">关键技术</h3>
+          <p class="section-subtitle">围绕“采得准、算得快、报得早、诊得清”构建设备健康管理能力。</p>
+        </div>
+      </div>
+      <div class="content-grid">
+        <div class="content-card">
+          <h3>智能采集策略</h3>
+          <p>通过指标采集、波形采集、长波形采集和关联采集策略，兼顾实时监测、精密分析和低速重载设备诊断需求。</p>
+        </div>
+        <div class="content-card">
+          <h3>分级报警机制</h3>
+          <p>基于趋势变化、横向对比、多测点融合和自适应阈值，识别故障严重程度与劣化速度，降低漏报和误报。</p>
+        </div>
+        <div class="content-card">
+          <h3>智能诊断模型</h3>
+          <p>结合设备模型、知识库、案例库和算法库，对轴承、齿轮、润滑、不平衡、不对中、松动等故障进行自动诊断。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="scenarios">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">典型应用场景</h3>
+          <p class="section-subtitle">覆盖旋转设备、输送设备和关键传动系统的状态看护与维护决策。</p>
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="content-card">
+          <h3>关键设备在线监测</h3>
+          <ul>
+            <li>悬臂泵、立式泵、双支撑泵、隔膜泵等泵类设备</li>
+            <li>风机、罗茨风机、空压机等旋转设备</li>
+            <li>皮带机、斗式提升机、取料机、喂料螺旋等输送设备</li>
+            <li>搅拌、齿轮箱、轴承座等关键传动部位</li>
+          </ul>
+        </div>
+        <div class="content-card">
+          <h3>运维闭环管理</h3>
+          <ul>
+            <li>异常预警与诊断结论推送</li>
+            <li>设备状态趋势、频谱和多参量分析</li>
+            <li>设备履历、故障案例和处理建议沉淀</li>
+            <li>为日常维护、定修和检修计划提供依据</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="value">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">项目价值</h3>
+          <p class="section-subtitle">让设备维护从经验驱动转向数据驱动，从事后处置转向提前预防。</p>
+        </div>
+      </div>
+      <div class="value-list">
+        <div class="value-item">
+          <strong>降低非计划停机风险</strong>
+          通过连续监测和提前预警，在设备故障扩大前识别异常并指导现场采取措施。
+        </div>
+        <div class="value-item">
+          <strong>提升检维修精准度</strong>
+          用状态数据和诊断结论替代单纯周期判断，减少过维修和欠维修，提升维修资源使用效率。
+        </div>
+        <div class="value-item">
+          <strong>沉淀设备知识资产</strong>
+          将故障案例、处理建议、设备履历和诊断模型持续沉淀，帮助团队提升经验复用和技术传承能力。
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="expand">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">扩展方向</h3>
+          <p class="section-subtitle">在预测性维护底座上，可进一步联动生产、检修和能源管理系统。</p>
+        </div>
+      </div>
+      <div class="content-grid">
+        <div class="content-card">
+          <h3>产线级健康看板</h3>
+          <p>将设备状态、报警等级、故障类型和检修进度统一呈现，为生产调度和设备管理提供全局视角。</p>
+        </div>
+        <div class="content-card">
+          <h3>智能工单联动</h3>
+          <p>将诊断结论转化为维护建议和工单任务，推动发现、派发、处理、复盘形成闭环。</p>
+        </div>
+        <div class="content-card">
+          <h3>多系统数据融合</h3>
+          <p>融合 DCS、PLC、能源、工艺和质量数据，提升设备异常原因分析和工况关联判断能力。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer-box" id="contact">
+      <h3>需要类似的设备预测性维护或智能点检方案？</h3>
+      <p>我们可以结合设备类型、工况环境、测点布置、网络条件和运维流程，提供预测性维护系统规划与落地建议。</p>
+      <div class="top-actions" style="margin-top: 18px;">
+        <a class="btn btn-secondary" href="../../index.html#case-sharing">返回案例列表</a>
+        <a class="btn btn-primary" href="../../index.html#contact-us">前往咨询</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
