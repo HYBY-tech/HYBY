@@ -720,6 +720,7 @@
   const subjectInput = inputs[2]; // 主题
   const messageInput = form.querySelector('textarea.form-control'); // 留言
   const submitBtn    = form.querySelector('button[type="submit"]');
+  const mailToAddress = 'jianbin80-hyby-info@2925.com';
 
   function ensurePreview() {
     let preview = document.getElementById('contact-preview');
@@ -815,6 +816,21 @@
     const tickerSentence = `${who} 的邮箱为 ${what}，关于 ${subject}，提出问题： ${content}`;
     tickerInnerEl.textContent = tickerSentence;
 
+    const mailSubject = `官网咨询：${subject}`;
+    const mailBody = [
+      '官网收到一条咨询信息：',
+      '',
+      `姓名：${who}`,
+      `邮箱：${what}`,
+      `主题：${subject}`,
+      '',
+      '咨询内容：',
+      content,
+      '',
+      `提交时间：${nowStamp()}`
+    ].join('\n');
+    window.location.href = `mailto:${mailToAddress}?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
+
     // 开启动画（先停一下再开，保证每次提交从头滚）
     tickerInnerEl.style.animation = 'none';
     // 根据字数估计滚动时长：最少 12s，最长 30s
@@ -825,7 +841,7 @@
 
     // 提交按钮小反馈
     const oldText = submitBtn.textContent;
-    submitBtn.textContent = '已记录 ✔';
+    submitBtn.textContent = '邮件已准备 ✔';
     submitBtn.disabled = true;
     setTimeout(() => {
       submitBtn.textContent = oldText;
