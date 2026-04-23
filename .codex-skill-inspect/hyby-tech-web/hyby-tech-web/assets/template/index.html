@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>案例分享 | 项目名称</title>
+  <meta name="description" content="对外展示的项目案例页（纯静态 HTML，可离线打开）" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="page-shell topbar-inner">
+      <div class="brand">
+        <div class="brand-mark">HY</div>
+        <div>
+          <h1>宏远博宇科技</h1>
+          <p>案例分享 / 项目类型或产品线</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <a class="btn btn-secondary" href="../index.html">返回案例分享</a>
+        <a class="btn btn-primary" href="#contact">咨询类似项目</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">行业场景标签</span>
+          <h2>项目名称（对外版）</h2>
+          <p>
+            用 2～3 句话说明：面向的场景、核心目标、总体方案（对外表述）。
+          </p>
+          <p class="small">
+            页面内容已改为<strong>纯静态 HTML</strong>，适合本地直接打开、离线拷贝和后续继续追加修改，不再依赖 React 或打包运行环境。
+          </p>
+          <div class="hero-note">
+            当前版本为对外展示用案例页：保留项目价值、建议范围与典型指标；不暴露敏感实施细节。
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <!-- 离线打开：使用相对路径。图片可替换为项目示意图 -->
+          <img src="assets/images/hero.jpg" alt="项目示意图" onerror="this.style.display='none'" />
+          <div class="hero-overlay">
+            <strong>一句话亮点</strong>
+            <div class="small" style="color: rgba(255,255,255,.86)">补充 1～2 行关键能力点/落地范围。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 指标卡：按需删改数量 -->
+      <div class="metrics" aria-label="项目指标">
+        <div class="card">
+          <div class="metric-value">1000+</div>
+          <div class="metric-label">视频点位规模</div>
+        </div>
+        <div class="card">
+          <div class="metric-value">200+</div>
+          <div class="metric-label">门禁与告警设备接入</div>
+        </div>
+        <div class="card">
+          <div class="metric-value">7 × 24</div>
+          <div class="metric-label">连续运行目标</div>
+        </div>
+        <div class="card">
+          <div class="metric-value">统一平台</div>
+          <div class="metric-label">集中监管与联动处置</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 项目概述 -->
+    <section class="section" id="overview">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">项目概述</h3>
+          <p class="section-subtitle">用更少的系统，覆盖更多的现场与流程。</p>
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <div class="content-card">
+          <h3>统一安防管理</h3>
+          <p>集中接入视频监控、电子围栏、出入口、入侵告警等系统，实现统一查看、统一调度与统一联动。</p>
+        </div>
+        <div class="content-card">
+          <h3>分层视频存储</h3>
+          <p>根据点位与业务要求规划存储池，支持后续扩容与容量调整，降低业务增长时的改造压力。</p>
+        </div>
+        <div class="content-card">
+          <h3>平台对接能力</h3>
+          <p>支持与集团或上级平台进行数据对接，满足更高层级的统一监管、审计与运维协同需求。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 方案要点 -->
+    <section class="section" id="solution">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">方案要点</h3>
+          <p class="section-subtitle">围绕“统一接入、统一权限、统一联动、统一运维”组织能力。</p>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="content-card">
+          <h3>平台能力</h3>
+          <ul>
+            <li>设备接入与资源编目</li>
+            <li>组织权限与分级管控</li>
+            <li>告警联动与处置闭环</li>
+            <li>运维巡检与健康可视化</li>
+          </ul>
+        </div>
+        <div class="content-card">
+          <h3>可靠性与适应性</h3>
+          <div class="value-list">
+            <div class="value-item"><strong>长期稳定运行</strong><span class="small">满足连续运行要求，降低停机风险。</span></div>
+            <div class="value-item"><strong>工业现场适配</strong><span class="small">适应粉尘、温度波动、连续生产等环境特点。</span></div>
+            <div class="value-item"><strong>平滑扩展</strong><span class="small">点位增长、存储增长可按阶段扩容。</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 价值与扩展 -->
+    <section class="section" id="value">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">项目价值</h3>
+          <p class="section-subtitle">业务价值 + 技术价值 + 扩展机会（对外版）。</p>
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <div class="content-card">
+          <h3>业务价值</h3>
+          <ul>
+            <li>减少多系统割裂带来的管理成本</li>
+            <li>提高异常发现与联动处置效率</li>
+            <li>统一审计与合规留痕，降低风险</li>
+          </ul>
+        </div>
+        <div class="content-card">
+          <h3>技术价值</h3>
+          <ul>
+            <li>架构清晰：平台 + 存储 + 运维能力解耦</li>
+            <li>可扩展：点位/区域/子系统可复制推广</li>
+            <li>可运维：健康度、告警、巡检形成闭环</li>
+          </ul>
+        </div>
+        <div class="content-card">
+          <h3>扩展机会</h3>
+          <ul>
+            <li>引入 AI 识别：周界/违停/烟火/人员聚集</li>
+            <li>工单协同：告警 → 工单 → 复盘</li>
+            <li>移动端巡检：更贴近现场处置</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer-box" id="contact">
+      <h3 style="margin:0; font-size: 1.6rem;">咨询类似项目</h3>
+      <p>如需行业化方案建议、建设范围评估与预算级测算，可留言或邮件联系（对外展示请用公共渠道）。</p>
+    </div>
+
+    <p class="small" style="margin-bottom: 60px;">© 2026 宏远博宇科技 · 本页为对外展示用途，内容已脱敏。</p>
+  </main>
+</body>
+</html>
