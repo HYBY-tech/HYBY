@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>案例分享 | 综合安防管理与存储系统</title>
+    <style>
+        :root {
+            --bg: #f3f7ff;
+            --surface: rgba(255, 255, 255, 0.92);
+            --primary: #0f62fe;
+            --primary-dark: #123b9b;
+            --accent: #4cc9f0;
+            --text: #183153;
+            --muted: #5f6f89;
+            --line: rgba(15, 98, 254, 0.12);
+            --shadow: 0 22px 44px rgba(18, 59, 155, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Microsoft YaHei", "PingFang SC", "Segoe UI", sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(76, 201, 240, 0.16), transparent 32%),
+                radial-gradient(circle at right 20%, rgba(15, 98, 254, 0.16), transparent 30%),
+                linear-gradient(180deg, #f8fbff 0%, #eef4ff 100%);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .page-shell {
+            width: min(1160px, calc(100% - 32px));
+            margin: 0 auto;
+        }
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            backdrop-filter: blur(16px);
+            background: rgba(248, 251, 255, 0.86);
+            border-bottom: 1px solid rgba(15, 98, 254, 0.08);
+        }
+
+        .topbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 16px 0;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-mark {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            display: grid;
+            place-items: center;
+            font-weight: 700;
+            box-shadow: 0 14px 28px rgba(15, 98, 254, 0.26);
+        }
+
+        .brand h1 {
+            margin: 0;
+            font-size: 1.05rem;
+        }
+
+        .brand p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .top-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 0 20px;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), #3a86ff);
+            color: white;
+            box-shadow: 0 18px 36px rgba(15, 98, 254, 0.18);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.8);
+            border-color: rgba(15, 98, 254, 0.16);
+            color: var(--primary-dark);
+        }
+
+        .hero {
+            padding: 56px 0 28px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.95fr;
+            gap: 28px;
+            align-items: stretch;
+        }
+
+        .hero-copy,
+        .hero-visual,
+        .card,
+        .content-card {
+            background: var(--surface);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow: var(--shadow);
+            border-radius: 28px;
+        }
+
+        .hero-copy {
+            padding: 34px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(15, 98, 254, 0.1);
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .hero-copy h2 {
+            margin: 18px 0 14px;
+            font-size: clamp(2rem, 4vw, 3.35rem);
+            line-height: 1.08;
+        }
+
+        .hero-copy p {
+            margin: 0 0 18px;
+            color: var(--muted);
+            font-size: 1.04rem;
+        }
+
+        .hero-note {
+            margin-top: 18px;
+            padding: 14px 16px;
+            border-left: 4px solid var(--accent);
+            background: rgba(76, 201, 240, 0.08);
+            border-radius: 14px;
+            color: var(--primary-dark);
+        }
+
+        .hero-visual {
+            overflow: hidden;
+            min-height: 420px;
+            position: relative;
+        }
+
+        .hero-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: auto 20px 20px 20px;
+            background: rgba(10, 24, 56, 0.75);
+            color: white;
+            border-radius: 20px;
+            padding: 16px 18px;
+        }
+
+        .hero-overlay strong {
+            display: block;
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin: 26px 0 38px;
+        }
+
+        .card {
+            padding: 24px;
+        }
+
+        .metric-value {
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .metric-label {
+            color: var(--muted);
+            font-size: 0.96rem;
+        }
+
+        .section {
+            margin: 0 0 26px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 18px;
+        }
+
+        .section-title {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .section-subtitle {
+            margin: 8px 0 0;
+            color: var(--muted);
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .content-card {
+            padding: 24px;
+        }
+
+        .content-card h3 {
+            margin: 0 0 12px;
+            font-size: 1.12rem;
+            color: var(--primary-dark);
+        }
+
+        .content-card p,
+        .content-card li {
+            color: var(--muted);
+        }
+
+        .content-card ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .value-list {
+            display: grid;
+            gap: 14px;
+        }
+
+        .value-item {
+            padding: 16px 18px;
+            border-radius: 18px;
+            background: rgba(15, 98, 254, 0.05);
+            border: 1px solid var(--line);
+        }
+
+        .value-item strong {
+            display: block;
+            color: var(--primary-dark);
+            margin-bottom: 6px;
+        }
+
+        .footer-box {
+            margin: 36px 0 60px;
+            padding: 26px;
+            border-radius: 28px;
+            background: linear-gradient(135deg, #0f62fe, #1d4ed8);
+            color: white;
+            box-shadow: 0 26px 44px rgba(15, 98, 254, 0.2);
+        }
+
+        .footer-box p {
+            margin: 10px 0 0;
+            color: rgba(255, 255, 255, 0.86);
+        }
+
+        @media (max-width: 980px) {
+            .hero-grid,
+            .metrics,
+            .content-grid,
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-visual {
+                min-height: 280px;
+            }
+
+            .section-header,
+            .topbar-inner {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="topbar">
+        <div class="page-shell topbar-inner">
+            <div class="brand">
+                <div class="brand-mark">HY</div>
+                <div>
+                    <h1>宏远博宇科技</h1>
+                    <p>案例分享 / 综合安防管理与存储系统</p>
+                </div>
+            </div>
+            <div class="top-actions">
+                <a class="btn btn-secondary" href="../../index.html#case-sharing">返回案例分享</a>
+                <a class="btn btn-primary" href="../../index.html#contact-us">咨询类似项目</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-shell">
+        <section class="hero">
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <div class="eyebrow">安防监控案例</div>
+                    <h2>综合安防管理与存储系统</h2>
+                    <p>本案例面向工业园区与生产现场，围绕“统一安防管理平台 + 视频存储平台 + 统一运维能力”进行建设，满足安防监控、出入口管理、告警联动、视频存储与上级平台对接等需求。</p>
+                    <p>页面内容已改为纯静态 HTML，适合本地直接打开、离线拷贝和后续继续追加修改，不再依赖 React 或打包运行环境。</p>
+                    <div class="hero-note">
+                        当前版本为对外展示用案例页，保留项目价值、建设范围和典型指标，不暴露敏感实施细节。
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <img src="./assets/hero-Bqr5A6Hy.png" alt="综合安防管理与存储系统案例主视觉">
+                    <div class="hero-overlay">
+                        <strong>面向工业场景的统一安防中枢</strong>
+                        视频监控、门禁、周界、告警、车辆出入与运维能力统一接入。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="metrics">
+            <div class="card">
+                <div class="metric-value">1000+</div>
+                <div class="metric-label">视频点位规模</div>
+            </div>
+            <div class="card">
+                <div class="metric-value">200+</div>
+                <div class="metric-label">门禁与告警设备接入</div>
+            </div>
+            <div class="card">
+                <div class="metric-value">7 x 24</div>
+                <div class="metric-label">连续运行目标</div>
+            </div>
+            <div class="card">
+                <div class="metric-value">统一平台</div>
+                <div class="metric-label">集中监管与联动处置</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">项目概述</h2>
+                    <p class="section-subtitle">把分散的安防系统收敛到同一平台上，形成统一接入、统一权限、统一联动、统一运维的能力底座。</p>
+                </div>
+            </div>
+            <div class="content-grid">
+                <article class="content-card">
+                    <h3>统一安防管理</h3>
+                    <p>集中接入视频监控、电子围栏、出入口、入侵告警等系统，实现一个平台统一查看、统一调度和统一联动。</p>
+                </article>
+                <article class="content-card">
+                    <h3>分层视频存储</h3>
+                    <p>根据不同点位与业务要求划分存储池，支持后续扩容和容量调整，降低业务增长时的改造压力。</p>
+                </article>
+                <article class="content-card">
+                    <h3>平台对接能力</h3>
+                    <p>支持与集团或上级平台进行数据对接，满足更高层级的统一监管、审计和运维协同需求。</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">建设范围</h2>
+                    <p class="section-subtitle">围绕平台、存储、前端设备与运维能力四个层面组织建设内容。</p>
+                </div>
+            </div>
+            <div class="content-grid">
+                <article class="content-card">
+                    <h3>综合安防平台</h3>
+                    <ul>
+                        <li>基础组织、区域、角色、权限与人员车辆管理</li>
+                        <li>视频预览、回放、联动和事件中心</li>
+                        <li>地图看板、告警处置和运行监测</li>
+                    </ul>
+                </article>
+                <article class="content-card">
+                    <h3>视频存储系统</h3>
+                    <ul>
+                        <li>统一访问入口与容量按需分配</li>
+                        <li>支持在线扩容与资源整合</li>
+                        <li>便于长期录像保留与后期扩展</li>
+                    </ul>
+                </article>
+                <article class="content-card">
+                    <h3>前端感知设备</h3>
+                    <ul>
+                        <li>网络摄像机、门禁、周界与告警类设备</li>
+                        <li>适配工业园区与复杂环境应用场景</li>
+                        <li>支持后续智能识别与 AI 分析扩展</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">关键要求</h2>
+                    <p class="section-subtitle">强调可靠性、可维护性、扩展性和长期运营价值。</p>
+                </div>
+            </div>
+            <div class="two-col">
+                <article class="content-card">
+                    <h3>可靠性与适应性</h3>
+                    <ul>
+                        <li>满足长期稳定运行要求</li>
+                        <li>适应工业现场粉尘、连续运行等环境特点</li>
+                        <li>具备统一监测、预警与维护能力</li>
+                    </ul>
+                </article>
+                <article class="content-card">
+                    <h3>扩展性与标准化</h3>
+                    <ul>
+                        <li>支持点位增加、容量增长与平台扩容</li>
+                        <li>适合多系统集成与后续功能叠加</li>
+                        <li>便于长期运维与分阶段建设</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">项目价值</h2>
+                    <p class="section-subtitle">既解决当前集中监管问题，也为未来平台升级和智能化改造预留空间。</p>
+                </div>
+            </div>
+            <div class="value-list">
+                <div class="value-item">
+                    <strong>管理更集中</strong>
+                    从多系统分散管理升级为统一平台管理，提升响应效率和协同能力。
+                </div>
+                <div class="value-item">
+                    <strong>风险更可控</strong>
+                    将视频、周界、出入口和告警形成完整联动链路，提升发现、处置和复盘效率。
+                </div>
+                <div class="value-item">
+                    <strong>运维更清晰</strong>
+                    通过统一监测与资源管理，帮助快速定位问题并降低后期维护成本。
+                </div>
+                <div class="value-item">
+                    <strong>演进更顺畅</strong>
+                    为后续 AI 分析、更多子系统接入和更高层级监管平台对接预留基础能力。
+                </div>
+            </div>
+        </section>
+
+        <section class="footer-box">
+            <h2>这个页面已经修复为本地可直接打开的版本</h2>
+            <p>如果你后续继续从 `from anygen` 放入新的案例代码，我建议都按这个方式落地：保留原始代码作为素材参考，再生成一个 `HYBY/案例分享/xx/index.html` 的纯静态展示页。这样最稳定，也最适合你当前这种本地文件访问方式。</p>
+        </section>
+    </main>
+</body>
+</html>

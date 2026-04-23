@@ -85,6 +85,7 @@
         
         .btn-primary:hover {
             background-color: var(--light-gray);
+            color: var(--primary-color);
             transform: translateY(-3px);
         }
         
@@ -165,6 +166,52 @@
         
         .product-features li {
             margin-bottom: 0.5rem;
+        }
+
+        .case-card {
+            background: white;
+            border: none;
+            border-radius: 14px;
+            box-shadow: 0 8px 24px rgba(29, 53, 87, 0.08);
+            padding: 2rem;
+            height: 100%;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .case-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 32px rgba(29, 53, 87, 0.12);
+        }
+
+        .case-tag {
+            display: inline-block;
+            padding: 0.35rem 0.8rem;
+            border-radius: 999px;
+            background: rgba(15, 98, 254, 0.1);
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .case-card h5 {
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        .case-card p {
+            margin-bottom: 1.25rem;
+        }
+
+        .case-metric {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+        }
+
+        #case-sharing {
+            background: linear-gradient(180deg, #ffffff 0%, #eef4ff 100%);
         }
         
         #partners {
@@ -271,6 +318,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#about">产品中心</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#case-sharing">案例分享</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#partners">合作伙伴</a>
@@ -384,6 +434,48 @@
     </section>
 
     <!-- 合作伙伴 -->
+    <section id="case-sharing" class="section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">案例分享</h2>
+                <p class="mt-4 mb-0">这里用于展示已交付项目案例、实施成效和行业解决方案。目前已接入 1 个真实案例页面，后续可以继续按项目追加。</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="case-card">
+                        <span class="case-tag">安防监控</span>
+                        <h5>综合安防管理与存储系统</h5>
+                        <p>已接入真实案例详情页，内容包含项目概述、建设范围、关键要求、业务价值与扩展方向，适合作为对外展示案例。</p>
+                        <div class="case-metric">1000+ 路视频点位</div>
+                        <p class="text-muted">已从外部案例代码接入，可直接点击查看完整页面。</p>
+                        <a href="案例分享/01/index.html" class="btn btn-primary mt-3">查看详情</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="case-card">
+                        <span class="case-tag">数字化基础设施</span>
+                        <h5>服务器与工控平台建设</h5>
+                        <p>适合展示硬件配置方案、稳定性要求、交付周期，以及客户业务连续性保障效果。</p>
+                        <div class="case-metric">稳定运行 99.9%</div>
+                        <p class="mb-0 text-muted">占位示例，可替换为真实运维与交付成果。</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="case-card">
+                        <span class="case-tag">智能装备</span>
+                        <h5>无人化巡检与监测应用</h5>
+                        <p>适合补充设备类型、应用场景、检测流程，以及远程管理与数据分析价值。</p>
+                        <div class="case-metric">巡检时长 -45%</div>
+                        <p class="mb-0 text-muted">占位示例，可替换为真实项目成效说明。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="#contact-us" class="btn btn-primary">咨询案例合作</a>
+            </div>
+        </div>
+    </section>
+
     <section id="partners">
         <div class="container text-center">
             <h2 class="mb-5 section-title">战略合作伙伴</h2>
